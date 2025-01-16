@@ -89,22 +89,24 @@ footer {
   border: 1px solid #ddd;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 /* Testing a hover increase in size for the profile card */
 .profile-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.15); /* Zoom by 1.15% */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.4s ease;
 }
 
 
 .profile-image img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%; /* Make the image circular */
   object-fit: cover;
   border: 3px solid #555; /* Optional border around the image */
+  transition: transform 0.5s ease;
 }
 
 /* Testing out the increase in image scale if hover */
