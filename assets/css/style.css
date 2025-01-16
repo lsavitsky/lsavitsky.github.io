@@ -65,3 +65,68 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+
+
+
+/* Specifically for the profile presentation */
+
+/* Profile Page */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: left;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover;
+  border: 3px solid #555; /* Optional border around the image */
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h1 {
+  margin-bottom: 10px;
+}
+
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-links li a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px; /* Rounded corners */
+  background-color: #003366; /* Dark blue background */
+  color: white; /* White text */
+  font-weight: bold;
+  text-align: center;
+}
+
+.profile-links li a:hover {
+  background-color: #004d99; /*Hover Color change*/
+}
+
+.profile-divider {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #ccc;
+  margin-top: 20px;
+}
