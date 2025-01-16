@@ -3,20 +3,29 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  
 }
 
-/* Header and Navigation */
+
+
+/* Header and Navigation,  */
 header {
+  position: sticky;  /* sticky = header stays at top of page */
+  top: 0;
+  z-index: 1000;
   background: #333;
   color: #fff;
+  width: 100%;
   padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* depth creation. Increase for more. */
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
+  padding: 10px 0; /* space between each one since its horizontal */
   margin: 0;
-  display: flex;
+  justify-content: center; 
+  display: flex; /* horizontal */
   justify-content: center;
 }
 
@@ -24,15 +33,21 @@ nav ul li {
   margin: 0 15px;
 }
 
+/* Normal navigation color settings for text navigation menu */
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px; /* Rounding corners for presentation */
+  transition: background-color 0.3s ease;
 }
 
+/* Color change when hover selection of navigation menu */
 nav ul li a:hover {
-  text-decoration: underline;
+  background-color: #555;
 }
+
 
 /* Main Content */
 main {
