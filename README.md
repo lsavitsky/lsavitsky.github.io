@@ -12,6 +12,7 @@ This site serves as a central hub for sharing information about me and my work. 
 - **Academic History**: Information about my educational background.
 - **Project Links**: Easy access to my various projects and contributions.
 - **Other Information**: Coming soon TBD
+- **Links**
   
 ## Work in Progress
 
