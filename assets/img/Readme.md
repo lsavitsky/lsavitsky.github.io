@@ -1,2 +1,2 @@
  # Location for all of the images 
- TBD
+- **Redpanda.jpeg**: Temp photo for use while building site
