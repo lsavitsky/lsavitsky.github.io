@@ -80,13 +80,24 @@ footer {
   text-align: left;
 }
 
-.profile-container {
+.profile-card {
   display: flex;
   align-items: center;
   gap: 20px;
   max-width: 800px;
   width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Testing a hover increase in size for the profile card */
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
 
 .profile-image img {
   width: 150px;
@@ -94,6 +105,12 @@ footer {
   border-radius: 50%; /* Make the image circular */
   object-fit: cover;
   border: 3px solid #555; /* Optional border around the image */
+}
+
+/* Testing out the increase in image scale if hover */
+.profile-image img:hover {
+  transform: scale(1.1); 
+  transition: all 0.4s ease;
 }
 
 .profile-info {
@@ -106,7 +123,6 @@ footer {
 
 .profile-links {
   display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
@@ -118,6 +134,7 @@ footer {
   color: white; /* White text */
   font-weight: bold;
   text-align: center;
+  transition: background-color 0.3s ease; /* Attempting a smoother hover color change affect */
 }
 
 .profile-links li a:hover {
