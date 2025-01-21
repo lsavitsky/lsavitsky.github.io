@@ -3,9 +3,68 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  
+  background-color: ghostwhite; /*bisque*/
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+/*This will hold the actual content such that it looks like a page on a page*/
+.page-container {
+    background-color: aliceblue;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 1200px;
+    min-width: 700px;
+    width: 70%; 
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 1, 0.8);
+    margin: 20px auto; /* Horizontally centers the container */
+
 }
 
+/*CHANGE DEFAULT H SETTINGS*/
+/* General Header Styling */
+h1, h2, h3, h4 {
+  margin: 0; /* Ensure consistent spacing */
+  line-height: 1.3; /* Slightly tighter line spacing for elegance */
+  color: #1A1A1A; /* Dark gray for softer contrast than pure black */
+}
+
+/* Specific Header Levels */
+/* h1: Clean sans- font for easy reading- use: Titles on Photos */
+h1 {
+  font-family: 'Arial', 'Helvetica', sans-serif; /* Clean, modern sans-serif font */
+  font-size: 2.5em; /* Large size for prominence */
+  line-height: 5.0; /*SLightly larger line hight for the photos to not be too small*/
+  font-weight: bold; /* Strong emphasis */
+  color: ghostwhite; /* White text for high contrast on dark photos */
+  text-align: center; /* Center-align for symmetry */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for legibility */
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Georgia', "Times New Roman", Times, serif; /* Slightly different serif for variation */
+  font-size: 2em; /* Slightly smaller than h1 */
+  font-weight: bold; /* Keep strong emphasis */
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-family: 'Constantia', "Lucida Bright", "DejaVu Serif", Georgia, serif;
+  font-size: 1.5em; /* Mid-level size */
+  font-weight: bold; /* Bold for clarity */
+  margin-bottom: 6px;
+}
+
+h4 {
+  font-family: 'Georgia', "Times New Roman", Times, serif;
+  font-size: 1.2em; /* Smaller, for subtitles or minor headings */
+  font-weight: normal; /* Lighter weight for differentiation */
+  margin-bottom: 5px;
+}
 
 
 /* Header and Navigation,  */
@@ -20,13 +79,18 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* depth creation. Increase for more. */
 }
 
+header.shrink {
+  padding: 5px 0;
+/*  transition: padding 0.3s ease, font-size 0.3s ease;*/
+}
+
 nav ul {
   list-style: none;
   padding: 10px 0; /* space between each one since its horizontal */
   margin: 0;
   justify-content: center; 
   display: flex; /* horizontal */
-  justify-content: center;
+
 }
 
 nav ul li {
@@ -67,26 +131,103 @@ footer {
 }
 
 
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
 
+
+
+
+/*Typical page setting defaults*/
+/* Profile Page */
+.default-page {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+    
+}
+
+/*Specifically for the sub-page headers*/
+.main-nav{
+    display:flex;
+    justify-content: space-between
+}
+/*Specifically for The Tool header icons*/
+.header-tools{
+    display:flex;
+    align-items:center;
+    gap: 10px; /*space between one another*/
+    padding-right: 10px; /*away from the edge of the header*/
+}
+
+.tool-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    border-radius: 5px; /* Rounded corners for display */
+    background-color: #444; /* Slightly different from main link header */
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none; /* Remove underline for links due to it being icons */
+    transition: background-color 0.3s ease;
+}
+
+.tool-button:hover{
+    background-color: #555;
+} 
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    
+    margin-right: -0px;
+    margin-left: -0px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
 
 /* Specifically for the profile presentation */
 
 /* Profile Page */
 .profile-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    text-align: left;
 }
 
 .profile-card {
+  background-color: rosybrown; /*Temp*/
   display: flex;
   align-items: center;
   gap: 20px;
-  max-width: 800px;
+/*  max-width: 800px;*/
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease; 
@@ -94,7 +235,7 @@ footer {
 
 /* Testing a hover increase in size for the profile card */
 .profile-card:hover {
-  transform: scale(1.15); /* Zoom by 1.15% */
+  transform: scale(1.0);/* Zoom by 1.15% */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.4s ease;
 }
@@ -107,16 +248,18 @@ footer {
   object-fit: cover;
   border: 3px solid #555; /* Optional border around the image */
   transition: transform 0.5s ease;
+  margin-left: 20px;
 }
 
 /* Testing out the increase in image scale if hover */
 .profile-image img:hover {
-  transform: scale(1.1); 
-  transition: all 0.4s ease;
+    transform: scale(1.1);
+    transition: all 0.4s ease;
 }
 
 .profile-info {
   flex-grow: 1;
+  margin-right: 20px; /*should be the same as profile-img margin-left*/
 }
 
 .profile-info h1 {
@@ -126,6 +269,7 @@ footer {
 .profile-links {
   display: flex;
   gap: 10px;
+  list-style: none; /*Remove bullets*/
 }
 
 .profile-links li a {
@@ -149,3 +293,325 @@ footer {
   border-top: 2px solid #ccc;
   margin-top: 20px;
 }
+
+/*This section is for the Interests and Education box areas aka meta on profile homepage*/
+
+.profile-meta{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px; /*Increase for larger gap between interests and Education */
+}
+
+/* Attempt at a line between the two sections */ 
+.profile-meta .interests-section {
+    border-right: 1px solid #ccc; /* Light gray vertical line */
+    padding-right: 20px; /* Space between the text and the line */
+   
+}
+
+.profile-meta .education-section {
+    padding-left: 20px;
+}
+
+
+
+
+/* Creating custom Education bullets */
+
+.ul-edu {
+    list-style: none; 
+    padding-left: 15px;
+}
+.ul-edu li {
+    list-style-type: url('../img/cap.png');
+    padding-left: 40px; /* Edit this for space under Education moving the bullets right. */
+    position: relative;
+}
+
+.ul-edu li::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform-origin: center;
+    margin-top: -12.5px;
+    width: 25px;
+    height: 25px;
+    background:
+        url('../img/cap.png') no-repeat center;
+    background-size: contain;
+}
+
+@keyframes tilt {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.ul-edu li:hover::before {
+    animation: tilt 0.9s ease-in-out; /* Adjust duration and timing as needed */
+    transform-origin: center;
+}
+
+
+img .ul-edu{
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
+}
+
+.profile-meta h3 {
+    font-weight: bold;
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+    font-size: 1.3em;
+    margin-bottom: 0px;
+}
+
+/*Education formating */
+
+/*Make Institution light gray and small underneath the degree */
+.description .institution {
+    color: #888;
+    font-size: 0.8em; /*Means .9 of whatever course font size is*/
+    margin-top: -4px;
+}
+.degree-line{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 0px /*spacing with line below*/
+}
+
+.degree {
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #1A0C52
+}
+.degree-date{
+    font-size: .85em;
+    
+    font-style: italic
+}
+
+/*Back to the top*/
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: whitesmoke;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+
+
+/* Style for mock sections */
+.mock-section {
+  height: 100px; /* Give enough height to enable scrolling */
+  margin: 20px 0;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*This section is for research.html*/
+
+/* Research Title Section */
+/* Research Title Section Styled Like Profile Card */
+.default-card {
+  background-color: rosybrown; /*Temp*/
+  display: flex;
+  align-items: center;
+  gap: 20px;
+/*  max-width: 800px;*/
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  overflow: hidden;
+  will-change: transform; /*This makes the image fit properly!*/
+
+}
+
+/* Testing a hover increase in size for the profile card */
+.default-card:hover {
+/*  transform: scale(1.0); Zoom by 1.15% */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+/*  transition: all 0.4s ease;*/
+}
+
+.research-title-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  margin: 20px auto;
+  border: 1px solid #000; /* Same border as profile card */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: rosybrown; /* Fallback for background image */
+}
+
+.research-title-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/temp_research_background_title.jpg') no-repeat center center/cover;
+  background-size: cover; 
+  z-index: 1;
+  justify-content: center;
+  display: flex;
+}
+
+.research-title-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-title-overlay h1 {
+/*
+  font-size: 2.5em;
+  color: #A69E88 ;
+*/
+/*  text-shadow: 0 6px 5px rgba(0, 0, 5, 2.7);*/
+}
+
+/* Content Sections */
+.research-content-section {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+
+
+
+/*DROP DOWN MENU*/
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Toggle Button */
+    .dropdown-toggle {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #4CAF50; /* Green */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center; /* Center text and arrow vertically */
+      gap: 5px; /* Space between text and arrow */
+    }
+
+    .dropdown-toggle:hover {
+      background-color: #45a049; /* Darker green on hover */
+    }
+
+    /* Dropdown Arrow */
+    .dropdown-toggle::after {
+      content: '';
+      border-top: 5px solid white; /* Down arrow */
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.3s ease; /* Smooth arrow rotation */
+    }
+
+    /* When dropdown is open, rotate the arrow to point upwards */
+    .dropdown.open .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Menu (Hidden by Default) */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%; /* Align below the button */
+      left: 0;
+      background-color: white;
+      min-width: 10rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+      border-radius: 5px;
+      padding: 0.5rem 0;
+      z-index: 1000;
+    }
+
+    /* Show Dropdown Menu */
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    /* Dropdown Items */
+    .dropdown-item {
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      color: #212529;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f8f9fa; /* Light gray */
+      color: #000;
+    }
+
+    /* Disabled Items */
+    .dropdown-item.disabled {
+      color: #6c757d;
+      pointer-events: none;
+      background-color: transparent;
+    }
+/** TOGGLE box */
+
+
+
+
+

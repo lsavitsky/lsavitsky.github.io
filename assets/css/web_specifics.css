@@ -1,0 +1,33 @@
+/* Define CSS custom properties for gradient start and end colors */
+:root {
+    --scroll-gradient-color: #e7e7e7; /* Light starting color */
+}
+
+/* Webkit Browsers */
+body::-webkit-scrollbar {
+    width: 12px; /* Scrollbar width */
+}
+
+body::-webkit-scrollbar-track {
+    background: linear-gradient(
+        180deg,
+        var(--scroll-gradient-color), 
+        #000000 /* Dark end color (black) */
+    ); /* Dynamic gradient that darkens as you scroll */
+    border-radius: 10px; /* Rounded corners */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888; /* Thumb color */
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker thumb on hover */
+}
+
+
+
+/* BASICS OF DROP DOWN CREATION */
+
+
