@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>CS vs Theater Toggle</title>
+    <style>
+        body {
+            margin: 0;
+            background: transparent; /* Transparent background for iframe use */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+        }
+
+        .toggle-container {
+            position: relative;
+            
+            width: 80%; /* Scales based on parent container */
+            max-width: 300px; /* Ensures a maximum size */
+            min-width: 230px;
+            height: 20%; /* Adjusts height proportionally */
+            max-height: 80px; /* Ensures a maximum height */
+            background: #e0e0e0;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .toggle-rectangle {
+            position: absolute;
+            left: 0;
+            width: 50%; /* width of toggle */
+            height: 100%; /* fix the container height */
+            border-radius: 40px; /* Rounded edges fit oval toggle */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 4px 8px rgba(255, 255, 255, 0.5);
+            transition: left 0.3s ease;
+        }
+
+        .toggle-container.active .toggle-rectangle {
+            left: 50%; /* Moves to the far right */
+        }
+
+        .label {
+            font-size: 90%; /*16px;*/
+            font-weight: bold;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap:10%;
+        }
+
+        .emoji {
+            font-size:110%; /*24px;*/
+        }
+
+        .label.cs {
+            margin-left: 5%;
+            margin-right: auto;
+        }
+
+        .label.theater {
+            margin-right: 10%;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container" id="toggle">
+        <div class="label cs">
+            <span class="emoji">💻</span>
+            <span>Computer Science</span>
+        </div>
+        <div class="toggle-rectangle"></div>
+        <div class="label theater">
+            <span>Theater</span>
+            <span class="emoji">🎭</span>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('toggle');
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
